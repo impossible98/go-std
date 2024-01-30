@@ -32,6 +32,14 @@ const sidebars = {
         'archive/zip',
       ],
     },
+    {
+      type: 'category',
+      label: 'compress',
+      collapsible: false,
+      items: [
+        'compress/bzip2',
+      ],
+    },
   ],
   codeSidebar: [
     {
@@ -62,6 +70,24 @@ const sidebars = {
             'code/archive/zip/register',
             'code/archive/zip/struct',
             'code/archive/zip/writer',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'compress',
+      collapsible: false,
+      items: [
+        {
+          type: 'category',
+          label: 'bzip2',
+          collapsible: false,
+          items: [
+            'code/compress/bzip2/bit_reader',
+            'code/compress/bzip2/bzip2',
+            'code/compress/bzip2/huffman',
+            'code/compress/bzip2/move_to_front',
           ],
         },
       ],

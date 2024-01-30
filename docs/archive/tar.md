@@ -425,10 +425,10 @@ Get animal handling license.
 
 ## Source Files
 
-- [common.go](/docs/code/archive/tar/common)
-- [format.go](/docs/code/archive/tar/format)
-- [reader.go](/docs/code/archive/tar/reader)
-- [stat_actime1.go](/docs/code/archive/tar/stat_actime1)
-- [stat_unix.go](/docs/code/archive/tar/stat_unix)
-- [strconv.go](/docs/code/archive/tar/strconv)
-- [writer.go](/docs/code/archive/tar/writer)
+- [common.go](/code/archive/tar/common)
+- [format.go](/code/archive/tar/format)
+- [reader.go](/code/archive/tar/reader)
+- [stat_actime1.go](/code/archive/tar/stat_actime1)
+- [stat_unix.go](/code/archive/tar/stat_unix)
+- [strconv.go](/code/archive/tar/strconv)
+- [writer.go](/code/archive/tar/writer)

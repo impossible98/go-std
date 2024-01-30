@@ -488,7 +488,7 @@ func main() {
 
 ## Source Files
 
-- [reader.go](/docs/code/archive/zip/reader)
-- [register.go](/docs/code/archive/zip/register)
-- [struct.go](/docs/code/archive/zip/struct)
-- [writer.go](/docs/code/archive/zip/writer)
+- [reader.go](/code/archive/zip/reader)
+- [register.go](/code/archive/zip/register)
+- [struct.go](/code/archive/zip/struct)
+- [writer.go](/code/archive/zip/writer)
