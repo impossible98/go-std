@@ -29,6 +29,7 @@ const sidebars = {
       collapsible: false,
       items: [
         'archive/tar',
+        'archive/zip',
       ],
     },
   ],
@@ -50,6 +51,17 @@ const sidebars = {
             'code/archive/tar/stat_unix',
             'code/archive/tar/strconv',
             'code/archive/tar/writer',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'zip',
+          collapsible: false,
+          items: [
+            'code/archive/zip/reader',
+            'code/archive/zip/register',
+            'code/archive/zip/struct',
+            'code/archive/zip/writer',
           ],
         },
       ],
