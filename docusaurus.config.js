@@ -74,9 +74,15 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'stdSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Standard Library',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'codeSidebar',
+            position: 'left',
+            label: 'Source Code',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -93,8 +99,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Standard Library',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Source Code',
+                to: '/docs/code/archive/tar/common',
               },
             ],
           },
