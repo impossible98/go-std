@@ -38,6 +38,7 @@ const sidebars = {
       collapsible: false,
       items: [
         'compress/bzip2',
+        'compress/flate',
       ],
     },
   ],
@@ -88,6 +89,20 @@ const sidebars = {
             'code/compress/bzip2/bzip2',
             'code/compress/bzip2/huffman',
             'code/compress/bzip2/move_to_front',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'flate',
+          collapsible: false,
+          items: [
+            'code/compress/flate/deflate',
+            'code/compress/flate/deflatefast',
+            'code/compress/flate/dict_decoder',
+            'code/compress/flate/huffman_bit_writer',
+            'code/compress/flate/huffman_code',
+            'code/compress/flate/inflate',
+            'code/compress/flate/token',
           ],
         },
       ],
