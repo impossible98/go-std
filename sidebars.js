@@ -40,6 +40,7 @@ const sidebars = {
         'compress/bzip2',
         'compress/flate',
         'compress/gzip',
+        'compress/lzw',
       ],
     },
   ],
@@ -113,6 +114,15 @@ const sidebars = {
           items: [
             'code/compress/gzip/gunzip',
             'code/compress/gzip/gzip',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'lzw',
+          collapsible: false,
+          items: [
+            'code/compress/lzw/reader',
+            'code/compress/lzw/writer',
           ],
         },
       ],
