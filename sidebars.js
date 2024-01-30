@@ -39,6 +39,7 @@ const sidebars = {
       items: [
         'compress/bzip2',
         'compress/flate',
+        'compress/gzip',
       ],
     },
   ],
@@ -103,6 +104,15 @@ const sidebars = {
             'code/compress/flate/huffman_code',
             'code/compress/flate/inflate',
             'code/compress/flate/token',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'gzip',
+          collapsible: false,
+          items: [
+            'code/compress/gzip/gunzip',
+            'code/compress/gzip/gzip',
           ],
         },
       ],
