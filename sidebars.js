@@ -50,6 +50,7 @@ const sidebars = {
       collapsible: false,
       items: ['container/heap', 'container/list', 'container/ring'],
     },
+    'context',
     'unsafe',
   ],
   codeSidebar: [
@@ -177,6 +178,12 @@ const sidebars = {
           items: ['code/container/ring/ring'],
         },
       ],
+    },
+    {
+      type: 'category',
+      label: 'context',
+      collapsible: false,
+      items: ['code/context/context'],
     },
     {
       type: 'category',
