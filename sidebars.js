@@ -20,8 +20,8 @@ const sidebars = {
   stdSidebar: [
     {
       type: 'doc',
-      id: 'intro',
-      label: 'Intro',
+      id: 'index',
+      label: 'What is Go?',
     },
     {
       type: 'category',
