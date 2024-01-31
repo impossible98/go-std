@@ -24,6 +24,7 @@ const sidebars = {
       label: 'Intro',
     },
     'bufio',
+    'builtin',
     {
       type: 'category',
       label: 'archive',
@@ -87,6 +88,14 @@ const sidebars = {
       items: [
         'code/bufio/bufio',
         'code/bufio/scan',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'builtin',
+      collapsible: false,
+      items: [
+        'code/builtin/builtin',
       ],
     },
     {

@@ -1,0 +1,19 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      run: yarn run build
+
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      skip:
+        - merge
+        - rebase
+      run: yarn commitlint --edit "$1"
