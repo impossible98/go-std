@@ -25,6 +25,7 @@ const sidebars = {
     },
     'bufio',
     'builtin',
+    'bytes',
     {
       type: 'category',
       label: 'archive',
@@ -96,6 +97,16 @@ const sidebars = {
       collapsible: false,
       items: [
         'code/builtin/builtin',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'bytes',
+      collapsible: false,
+      items: [
+        'code/bytes/buffer',
+        'code/bytes/bytes',
+        'code/bytes/reader',
       ],
     },
     {
