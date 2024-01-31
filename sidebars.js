@@ -51,6 +51,7 @@ const sidebars = {
       items: ['container/heap', 'container/list', 'container/ring'],
     },
     'context',
+    'crypto/index',
     'unsafe',
   ],
   codeSidebar: [
@@ -184,6 +185,12 @@ const sidebars = {
       label: 'context',
       collapsible: false,
       items: ['code/context/context'],
+    },
+    {
+      type: 'category',
+      label: 'crypto',
+      collapsible: false,
+      items: ['code/crypto/crypto'],
     },
     {
       type: 'category',
