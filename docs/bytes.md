@@ -224,7 +224,7 @@ func Repeat(b []byte, count int) []byte
 
 Repeat returns a new byte slice consisting of count copies of b.
 
-It panics if count is negative or if the result of (len(b) * count) overflows.
+It panics if count is negative or if the result of (len(b) \* count) overflows.
 
 ### Replace
 
@@ -458,7 +458,7 @@ NewBufferString creates and initializes a new Buffer using string s as its initi
 
 In most cases, new(Buffer) (or just declaring a Buffer variable) is sufficient to initialize a Buffer.
 
-#### (*Buffer) Bytes
+#### (\*Buffer) Bytes
 
 ```go
 func (b *Buffer) Bytes() []byte
@@ -466,7 +466,7 @@ func (b *Buffer) Bytes() []byte
 
 Bytes returns a slice of length b.Len() holding the unread portion of the buffer. The slice is valid for use only until the next buffer modification (that is, only until the next call to a method like Read, Write, Reset, or Truncate). The slice aliases the buffer content at least until the next buffer modification, so immediate changes to the slice will affect the result of future reads.
 
-#### (*Buffer) Cap
+#### (\*Buffer) Cap
 
 ```go
 func (b *Buffer) Cap() int
@@ -474,7 +474,7 @@ func (b *Buffer) Cap() int
 
 Cap returns the capacity of the buffer's underlying byte slice, that is, the total space allocated for the buffer's data.
 
-#### (*Buffer) Grow
+#### (\*Buffer) Grow
 
 ```go
 func (b *Buffer) Grow(n int)
@@ -482,7 +482,7 @@ func (b *Buffer) Grow(n int)
 
 Grow grows the buffer's capacity, if necessary, to guarantee space for another n bytes. After Grow(n), at least n bytes can be written to the buffer without another allocation. If n is negative, Grow will panic. If the buffer can't grow it will panic with ErrTooLarge.
 
-#### (*Buffer) Len
+#### (\*Buffer) Len
 
 ```go
 func (b *Buffer) Len() int
@@ -490,7 +490,7 @@ func (b *Buffer) Len() int
 
 Len returns the number of bytes of the unread portion of the buffer; b.Len() == len(b.Bytes()).
 
-#### (*Buffer) Next
+#### (\*Buffer) Next
 
 ```go
 func (b *Buffer) Next(n int) []byte
@@ -498,7 +498,7 @@ func (b *Buffer) Next(n int) []byte
 
 Next returns a slice containing the next n bytes from the buffer, advancing the buffer as if the bytes had been returned by Read. If there are fewer than n bytes in the buffer, Next returns the entire buffer. The slice is only valid until the next call to a read or write method.
 
-#### (*Buffer) Read
+#### (\*Buffer) Read
 
 ```go
 func (b *Buffer) Read(p []byte) (n int, err error)
@@ -506,7 +506,7 @@ func (b *Buffer) Read(p []byte) (n int, err error)
 
 Read reads the next len(p) bytes from the buffer or until the buffer is drained. The return value n is the number of bytes read. If the buffer has no data to return, err is io.EOF (unless len(p) is zero); otherwise it is nil.
 
-#### (*Buffer) ReadByte
+#### (\*Buffer) ReadByte
 
 ```go
 func (b *Buffer) ReadByte() (byte, error)
@@ -514,7 +514,7 @@ func (b *Buffer) ReadByte() (byte, error)
 
 ReadByte reads and returns the next byte from the buffer. If no byte is available, it returns error io.EOF.
 
-#### (*Buffer) ReadBytes
+#### (\*Buffer) ReadBytes
 
 ```go
 func (b *Buffer) ReadBytes(delim byte) (line []byte, err error)
@@ -522,7 +522,7 @@ func (b *Buffer) ReadBytes(delim byte) (line []byte, err error)
 
 ReadBytes reads until the first occurrence of delim in the input, returning a slice containing the data up to and including the delimiter. If ReadBytes encounters an error before finding a delimiter, it returns the data read before the error and the error itself (often io.EOF). ReadBytes returns err != nil if and only if the returned data does not end in delim.
 
-#### (*Buffer) ReadFrom
+#### (\*Buffer) ReadFrom
 
 ```go
 func (b *Buffer) ReadFrom(r io.Reader) (n int64, err error)
@@ -530,7 +530,7 @@ func (b *Buffer) ReadFrom(r io.Reader) (n int64, err error)
 
 ReadFrom reads data from r until EOF and appends it to the buffer, growing the buffer as needed. The return value n is the number of bytes read. Any error except io.EOF encountered during the read is also returned. If the buffer becomes too large, ReadFrom will panic with ErrTooLarge.
 
-#### (*Buffer) ReadRune
+#### (\*Buffer) ReadRune
 
 ```go
 func (b *Buffer) ReadRune() (r rune, size int, err error)
@@ -538,7 +538,7 @@ func (b *Buffer) ReadRune() (r rune, size int, err error)
 
 ReadRune reads and returns the next UTF-8-encoded Unicode code point from the buffer. If no bytes are available, the error returned is io.EOF. If the bytes are an erroneous UTF-8 encoding, it consumes one byte and returns U+FFFD, 1.
 
-#### (*Buffer) ReadString
+#### (\*Buffer) ReadString
 
 ```go
 func (b *Buffer) ReadString(delim byte) (line string, err error)
@@ -546,7 +546,7 @@ func (b *Buffer) ReadString(delim byte) (line string, err error)
 
 ReadString reads until the first occurrence of delim in the input, returning a string containing the data up to and including the delimiter. If ReadString encounters an error before finding a delimiter, it returns the data read before the error and the error itself (often io.EOF). ReadString returns err != nil if and only if the returned data does not end in delim.
 
-#### (*Buffer) Reset
+#### (\*Buffer) Reset
 
 ```go
 func (b *Buffer) Reset()
@@ -554,7 +554,7 @@ func (b *Buffer) Reset()
 
 Reset resets the buffer to be empty, but it retains the underlying storage for use by future writes. Reset is the same as Truncate(0).
 
-#### (*Buffer) String
+#### (\*Buffer) String
 
 ```go
 func (b *Buffer) String() string
@@ -564,7 +564,7 @@ String returns the contents of the unread portion of the buffer as a string. If 
 
 To build strings more efficiently, see the strings.Builder type.
 
-#### (*Buffer) Truncate
+#### (\*Buffer) Truncate
 
 ```go
 func (b *Buffer) Truncate(n int)
@@ -572,7 +572,7 @@ func (b *Buffer) Truncate(n int)
 
 Truncate discards all but the first n unread bytes from the buffer but continues to use the same allocated storage. It panics if n is negative or greater than the length of the buffer.
 
-#### (*Buffer) UnreadByte
+#### (\*Buffer) UnreadByte
 
 ```go
 func (b *Buffer) UnreadByte() error
@@ -580,7 +580,7 @@ func (b *Buffer) UnreadByte() error
 
 UnreadByte unreads the last byte returned by the most recent successful read operation that read at least one byte. If a write has happened since the last read, if the last read returned an error, or if the read read zero bytes, UnreadByte returns an error.
 
-#### (*Buffer) UnreadRune
+#### (\*Buffer) UnreadRune
 
 ```go
 func (b *Buffer) UnreadRune() error
@@ -589,7 +589,7 @@ func (b *Buffer) UnreadRune() error
 UnreadRune unreads the last rune returned by ReadRune. If the most recent read or write operation on the buffer was not a successful ReadRune, UnreadRune returns an error.
 (In this regard it is stricter than UnreadByte, which will unread the last byte from any read operation.)
 
-#### (*Buffer) Write
+#### (\*Buffer) Write
 
 ```go
 func (b *Buffer) Write(p []byte) (n int, err error)
@@ -597,7 +597,7 @@ func (b *Buffer) Write(p []byte) (n int, err error)
 
 Write appends the contents of p to the buffer, growing the buffer as needed. The return value n is the length of p; err is always nil. If the buffer becomes too large, Write will panic with ErrTooLarge.
 
-#### (*Buffer) WriteByte
+#### (\*Buffer) WriteByte
 
 ```go
 func (b *Buffer) WriteByte(c byte) error
@@ -605,7 +605,7 @@ func (b *Buffer) WriteByte(c byte) error
 
 WriteByte appends the byte c to the buffer, growing the buffer as needed. The returned error is always nil, but is included to match bufio.Writer's WriteByte. If the buffer becomes too large, WriteByte will panic with ErrTooLarge.
 
-#### (*Buffer) WriteRune
+#### (\*Buffer) WriteRune
 
 ```go
 func (b *Buffer) WriteRune(r rune) (n int, err error)
@@ -613,7 +613,7 @@ func (b *Buffer) WriteRune(r rune) (n int, err error)
 
 WriteRune appends the UTF-8 encoding of Unicode code point r to the buffer, returning its length and an error, which is always nil but is included to match bufio.Writer's WriteRune. The buffer is grown as needed; if it becomes too large, WriteRune will panic with ErrTooLarge.
 
-#### (*Buffer) WriteString
+#### (\*Buffer) WriteString
 
 ```go
 func (b *Buffer) WriteString(s string) (n int, err error)
@@ -621,7 +621,7 @@ func (b *Buffer) WriteString(s string) (n int, err error)
 
 WriteString appends the contents of s to the buffer, growing the buffer as needed. The return value n is the length of s; err is always nil. If the buffer becomes too large, WriteString will panic with ErrTooLarge.
 
-#### (*Buffer) WriteTo
+#### (\*Buffer) WriteTo
 
 ```go
 func (b *Buffer) WriteTo(w io.Writer) (n int64, err error)
@@ -647,7 +647,7 @@ func NewReader(b []byte) *Reader
 
 NewReader returns a new Reader reading from b.
 
-#### (*Reader) Len
+#### (\*Reader) Len
 
 ```go
 func (r *Reader) Len() int
@@ -655,7 +655,7 @@ func (r *Reader) Len() int
 
 Len returns the number of bytes of the unread portion of the slice.
 
-#### (*Reader) Read
+#### (\*Reader) Read
 
 ```go
 func (r *Reader) Read(b []byte) (n int, err error)
@@ -663,7 +663,7 @@ func (r *Reader) Read(b []byte) (n int, err error)
 
 Read implements the io.Reader interface.
 
-#### (*Reader) ReadAt
+#### (\*Reader) ReadAt
 
 ```go
 func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)
@@ -671,7 +671,7 @@ func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)
 
 ReadAt implements the io.ReaderAt interface.
 
-#### (*Reader) ReadByte
+#### (\*Reader) ReadByte
 
 ```go
 func (r *Reader) ReadByte() (byte, error)
@@ -679,7 +679,7 @@ func (r *Reader) ReadByte() (byte, error)
 
 ReadByte implements the io.ByteReader interface.
 
-#### (*Reader) ReadRune
+#### (\*Reader) ReadRune
 
 ```go
 func (r *Reader) ReadRune() (ch rune, size int, err error)
@@ -687,7 +687,7 @@ func (r *Reader) ReadRune() (ch rune, size int, err error)
 
 ReadRune implements the io.RuneReader interface.
 
-#### (*Reader) Reset
+#### (\*Reader) Reset
 
 ```go
 func (r *Reader) Reset(b []byte)
@@ -695,7 +695,7 @@ func (r *Reader) Reset(b []byte)
 
 Reset resets the Reader to be reading from b.
 
-#### (*Reader) Seek
+#### (\*Reader) Seek
 
 ```go
 func (r *Reader) Seek(offset int64, whence int) (int64, error)
@@ -703,7 +703,7 @@ func (r *Reader) Seek(offset int64, whence int) (int64, error)
 
 Seek implements the io.Seeker interface.
 
-#### (*Reader) Size
+#### (\*Reader) Size
 
 ```go
 func (r *Reader) Size() int64
@@ -711,7 +711,7 @@ func (r *Reader) Size() int64
 
 Size returns the original length of the underlying byte slice. Size is the number of bytes available for reading via ReadAt. The result is unaffected by any method calls except Reset.
 
-#### (*Reader) UnreadByte
+#### (\*Reader) UnreadByte
 
 ```go
 func (r *Reader) UnreadByte() error
@@ -719,7 +719,7 @@ func (r *Reader) UnreadByte() error
 
 UnreadByte complements ReadByte in implementing the io.ByteScanner interface.
 
-#### (*Reader) UnreadRune
+#### (\*Reader) UnreadRune
 
 ```go
 func (r *Reader) UnreadRune() error
@@ -727,7 +727,7 @@ func (r *Reader) UnreadRune() error
 
 UnreadRune complements ReadRune in implementing the io.RuneScanner interface.
 
-#### (*Reader) WriteTo
+#### (\*Reader) WriteTo
 
 ```go
 func (r *Reader) WriteTo(w io.Writer) (n int64, err error)

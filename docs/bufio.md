@@ -129,7 +129,7 @@ func NewReaderSize(rd io.Reader, size int) *Reader
 
 NewReaderSize returns a new Reader whose buffer has at least the specified size. If the argument io.Reader is already a Reader with large enough size, it returns the underlying Reader.
 
-#### (*Reader) Buffered
+#### (\*Reader) Buffered
 
 ```go
 func (b *Reader) Buffered() int
@@ -137,7 +137,7 @@ func (b *Reader) Buffered() int
 
 Buffered returns the number of bytes that can be read from the current buffer.
 
-#### (*Reader) Discard
+#### (\*Reader) Discard
 
 ```go
 func (b *Reader) Discard(n int) (discarded int, err error)
@@ -147,7 +147,7 @@ Discard skips the next n bytes, returning the number of bytes discarded.
 
 If Discard skips fewer than n bytes, it also returns an error. If 0 \<= n \<= b.Buffered(), Discard is guaranteed to succeed without reading from the underlying io.Reader.
 
-#### (*Reader) Peek
+#### (\*Reader) Peek
 
 ```go
 func (b *Reader) Peek(n int) ([]byte, error)
@@ -157,7 +157,7 @@ Peek returns the next n bytes without advancing the reader. The bytes stop being
 
 Calling Peek prevents a UnreadByte or UnreadRune call from succeeding until the next read operation.
 
-#### (*Reader) Read
+#### (\*Reader) Read
 
 ```go
 func (b *Reader) Read(p []byte) (n int, err error)
@@ -165,7 +165,7 @@ func (b *Reader) Read(p []byte) (n int, err error)
 
 Read reads data into p. It returns the number of bytes read into p. The bytes are taken from at most one Read on the underlying Reader, hence n may be less than len(p). To read exactly len(p) bytes, use io.ReadFull(b, p). If the underlying Reader can return a non-zero count with io.EOF, then this Read method can do so as well; see the io.Reader docs.
 
-#### (*Reader) ReadByte
+#### (\*Reader) ReadByte
 
 ```go
 func (b *Reader) ReadByte() (byte, error)
@@ -173,7 +173,7 @@ func (b *Reader) ReadByte() (byte, error)
 
 ReadByte reads and returns a single byte. If no byte is available, returns an error.
 
-#### (*Reader) ReadBytes
+#### (\*Reader) ReadBytes
 
 ```go
 func (b *Reader) ReadBytes(delim byte) ([]byte, error)
@@ -181,7 +181,7 @@ func (b *Reader) ReadBytes(delim byte) ([]byte, error)
 
 ReadBytes reads until the first occurrence of delim in the input, returning a slice containing the data up to and including the delimiter. If ReadBytes encounters an error before finding a delimiter, it returns the data read before the error and the error itself (often io.EOF). ReadBytes returns err != nil if and only if the returned data does not end in delim. For simple uses, a Scanner may be more convenient.
 
-#### (*Reader) ReadLine
+#### (\*Reader) ReadLine
 
 ```go
 func (b *Reader) ReadLine() (line []byte, isPrefix bool, err error)
@@ -193,7 +193,7 @@ ReadLine tries to return a single line, not including the end-of-line bytes. If 
 
 The text returned from ReadLine does not include the line end ("\r\n" or "\n"). No indication or error is given if the input ends without a final line end. Calling UnreadByte after ReadLine will always unread the last byte read (possibly a character belonging to the line end) even if that byte is not part of the line returned by ReadLine.
 
-#### (*Reader) ReadRune
+#### (\*Reader) ReadRune
 
 ```go
 func (b *Reader) ReadRune() (r rune, size int, err error)
@@ -201,7 +201,7 @@ func (b *Reader) ReadRune() (r rune, size int, err error)
 
 ReadRune reads a single UTF-8 encoded Unicode character and returns the rune and its size in bytes. If the encoded rune is invalid, it consumes one byte and returns unicode.ReplacementChar (U+FFFD) with a size of 1.
 
-#### (*Reader) ReadSlice
+#### (\*Reader) ReadSlice
 
 ```go
 func (b *Reader) ReadSlice(delim byte) (line []byte, err error)
@@ -209,7 +209,7 @@ func (b *Reader) ReadSlice(delim byte) (line []byte, err error)
 
 ReadSlice reads until the first occurrence of delim in the input, returning a slice pointing at the bytes in the buffer. The bytes stop being valid at the next read. If ReadSlice encounters an error before finding a delimiter, it returns all the data in the buffer and the error itself (often io.EOF). ReadSlice fails with error ErrBufferFull if the buffer fills without a delim. Because the data returned from ReadSlice will be overwritten by the next I/O operation, most clients should use ReadBytes or ReadString instead. ReadSlice returns err != nil if and only if line does not end in delim.
 
-#### (*Reader) ReadString
+#### (\*Reader) ReadString
 
 ```go
 func (b *Reader) ReadString(delim byte) (string, error)
@@ -217,7 +217,7 @@ func (b *Reader) ReadString(delim byte) (string, error)
 
 ReadString reads until the first occurrence of delim in the input, returning a string containing the data up to and including the delimiter. If ReadString encounters an error before finding a delimiter, it returns the data read before the error and the error itself (often io.EOF). ReadString returns err != nil if and only if the returned data does not end in delim. For simple uses, a Scanner may be more convenient.
 
-#### (*Reader) Reset
+#### (\*Reader) Reset
 
 ```go
 func (b *Reader) Reset(r io.Reader)
@@ -225,7 +225,7 @@ func (b *Reader) Reset(r io.Reader)
 
 Reset discards any buffered data, resets all state, and switches the buffered reader to read from r. Calling Reset on the zero value of Reader initializes the internal buffer to the default size.
 
-#### (*Reader) Size
+#### (\*Reader) Size
 
 ```go
 func (b *Reader) Size() int
@@ -233,7 +233,7 @@ func (b *Reader) Size() int
 
 Size returns the size of the underlying buffer in bytes.
 
-#### (*Reader) UnreadByte
+#### (\*Reader) UnreadByte
 
 ```go
 func (b *Reader) UnreadByte() error
@@ -243,7 +243,7 @@ UnreadByte unreads the last byte. Only the most recently read byte can be unread
 
 UnreadByte returns an error if the most recent method called on the Reader was not a read operation. Notably, Peek, Discard, and WriteTo are not considered read operations.
 
-#### (*Reader) UnreadRune
+#### (\*Reader) UnreadRune
 
 ```go
 func (b *Reader) UnreadRune() error
@@ -251,7 +251,7 @@ func (b *Reader) UnreadRune() error
 
 UnreadRune unreads the last rune. If the most recent method called on the Reader was not a ReadRune, UnreadRune returns an error. (In this regard it is stricter than UnreadByte, which will unread the last byte from any read operation.)
 
-#### (*Reader) WriteTo
+#### (\*Reader) WriteTo
 
 ```go
 func (b *Reader) WriteTo(w io.Writer) (n int64, err error)
@@ -279,7 +279,7 @@ func NewScanner(r io.Reader) *Scanner
 
 NewScanner returns a new Scanner to read from r. The split function defaults to ScanLines.
 
-#### (*Scanner) Buffer
+#### (\*Scanner) Buffer
 
 ```go
 func (s *Scanner) Buffer(buf []byte, max int)
@@ -291,7 +291,7 @@ By default, Scan uses an internal buffer and sets the maximum token size to MaxS
 
 Buffer panics if it is called after scanning has started.
 
-#### (*Scanner) Bytes
+#### (\*Scanner) Bytes
 
 ```go
 func (s *Scanner) Bytes() []byte
@@ -299,7 +299,7 @@ func (s *Scanner) Bytes() []byte
 
 Bytes returns the most recent token generated by a call to Scan. The underlying array may point to data that will be overwritten by a subsequent call to Scan. It does no allocation.
 
-#### (*Scanner) Err
+#### (\*Scanner) Err
 
 ```go
 func (s *Scanner) Err() error
@@ -307,7 +307,7 @@ func (s *Scanner) Err() error
 
 Err returns the first non-EOF error that was encountered by the Scanner.
 
-#### (*Scanner) Scan
+#### (\*Scanner) Scan
 
 ```go
 func (s *Scanner) Scan() bool
@@ -315,7 +315,7 @@ func (s *Scanner) Scan() bool
 
 Scan advances the Scanner to the next token, which will then be available through the Bytes or Text method. It returns false when the scan stops, either by reaching the end of the input or an error. After Scan returns false, the Err method will return any error that occurred during scanning, except that if it was io.EOF, Err will return nil. Scan panics if the split function returns too many empty tokens without advancing the input. This is a common error mode for scanners.
 
-#### (*Scanner) Split
+#### (\*Scanner) Split
 
 ```go
 func (s *Scanner) Split(split SplitFunc)
@@ -325,7 +325,7 @@ Split sets the split function for the Scanner. The default split function is Sca
 
 Split panics if it is called after scanning has started.
 
-#### (*Scanner) Text
+#### (\*Scanner) Text
 
 ```go
 func (s *Scanner) Text() string
@@ -373,7 +373,7 @@ func NewWriterSize(w io.Writer, size int) *Writer
 
 NewWriterSize returns a new Writer whose buffer has at least the specified size. If the argument io.Writer is already a Writer with large enough size, it returns the underlying Writer.
 
-#### (*Writer) Available
+#### (\*Writer) Available
 
 ```go
 func (b *Writer) Available() int
@@ -381,7 +381,7 @@ func (b *Writer) Available() int
 
 Available returns how many bytes are unused in the buffer.
 
-#### (*Writer) AvailableBuffer
+#### (\*Writer) AvailableBuffer
 
 ```go
 func (b *Writer) AvailableBuffer() []byte
@@ -389,7 +389,7 @@ func (b *Writer) AvailableBuffer() []byte
 
 AvailableBuffer returns an empty buffer with b.Available() capacity. This buffer is intended to be appended to and passed to an immediately succeeding Write call. The buffer is only valid until the next write operation on b.
 
-#### (*Writer) Buffered
+#### (\*Writer) Buffered
 
 ```go
 func (b *Writer) Buffered() int
@@ -397,7 +397,7 @@ func (b *Writer) Buffered() int
 
 Buffered returns the number of bytes that have been written into the current buffer.
 
-#### (*Writer) Flush
+#### (\*Writer) Flush
 
 ```go
 func (b *Writer) Flush() error
@@ -405,7 +405,7 @@ func (b *Writer) Flush() error
 
 Flush writes any buffered data to the underlying io.Writer.
 
-#### (*Writer) ReadFrom
+#### (\*Writer) ReadFrom
 
 ```go
 func (b *Writer) ReadFrom(r io.Reader) (n int64, err error)
@@ -413,7 +413,7 @@ func (b *Writer) ReadFrom(r io.Reader) (n int64, err error)
 
 ReadFrom implements io.ReaderFrom. If the underlying writer supports the ReadFrom method, this calls the underlying ReadFrom. If there is buffered data and an underlying ReadFrom, this fills the buffer and writes it before calling ReadFrom.
 
-#### (*Writer) Reset
+#### (\*Writer) Reset
 
 ```go
 func (b *Writer) Reset(w io.Writer)
@@ -421,7 +421,7 @@ func (b *Writer) Reset(w io.Writer)
 
 Reset discards any unflushed buffered data, clears any error, and resets b to write its output to w. Calling Reset on the zero value of Writer initializes the internal buffer to the default size.
 
-#### (*Writer) Size
+#### (\*Writer) Size
 
 ```go
 func (b *Writer) Size() int
@@ -429,7 +429,7 @@ func (b *Writer) Size() int
 
 Size returns the size of the underlying buffer in bytes.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (b *Writer) Write(p []byte) (nn int, err error)
@@ -437,7 +437,7 @@ func (b *Writer) Write(p []byte) (nn int, err error)
 
 Write writes the contents of p into the buffer. It returns the number of bytes written. If nn < len(p), it also returns an error explaining why the write is short.
 
-#### (*Writer) WriteByte
+#### (\*Writer) WriteByte
 
 ```go
 func (b *Writer) WriteByte(c byte) error
@@ -445,7 +445,7 @@ func (b *Writer) WriteByte(c byte) error
 
 WriteByte writes a single byte.
 
-#### (*Writer) WriteRune
+#### (\*Writer) WriteRune
 
 ```go
 func (b *Writer) WriteRune(r rune) (size int, err error)
@@ -453,7 +453,7 @@ func (b *Writer) WriteRune(r rune) (size int, err error)
 
 WriteRune writes a single Unicode code point, returning the number of bytes written and any error.
 
-#### (*Writer) WriteString
+#### (\*Writer) WriteString
 
 ```go
 func (b *Writer) WriteString(s string) (int, error)

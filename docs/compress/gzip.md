@@ -78,7 +78,7 @@ It is the caller's responsibility to call Close on the Reader when done.
 
 The Reader.Header fields will be valid in the Reader returned.
 
-#### (*Reader) Close
+#### (\*Reader) Close
 
 ```go
 func (z *Reader) Close() error
@@ -86,7 +86,7 @@ func (z *Reader) Close() error
 
 Close closes the Reader. It does not close the underlying io.Reader. In order for the GZIP checksum to be verified, the reader must be fully consumed until the io.EOF.
 
-#### (*Reader) Multistream
+#### (\*Reader) Multistream
 
 ```go
 func (z *Reader) Multistream(ok bool)
@@ -98,7 +98,7 @@ If enabled (the default), the Reader expects the input to be a sequence of indiv
 
 Calling Multistream(false) disables this behavior; disabling the behavior can be useful when reading file formats that distinguish individual gzip data streams or mix gzip data streams with other data streams. In this mode, when the Reader reaches the end of the data stream, Read returns io.EOF. The underlying reader must implement io.ByteReader in order to be left positioned just after the gzip stream. To start the next stream, call z.Reset(r) followed by z.Multistream(false). If there is no next stream, z.Reset(r) will return io.EOF.
 
-#### (*Reader) Read
+#### (\*Reader) Read
 
 ```go
 func (z *Reader) Read(p []byte) (n int, err error)
@@ -106,7 +106,7 @@ func (z *Reader) Read(p []byte) (n int, err error)
 
 Read implements io.Reader, reading uncompressed bytes from its underlying Reader.
 
-#### (*Reader) Reset
+#### (\*Reader) Reset
 
 ```go
 func (z *Reader) Reset(r io.Reader) error
@@ -147,7 +147,7 @@ NewWriterLevel is like NewWriter but specifies the compression level instead of 
 
 The compression level can be DefaultCompression, NoCompression, HuffmanOnly or any integer value between BestSpeed and BestCompression inclusive. The error returned will be nil if the level is valid.
 
-#### (*Writer) Close
+#### (\*Writer) Close
 
 ```go
 func (z *Writer) Close() error
@@ -155,7 +155,7 @@ func (z *Writer) Close() error
 
 Close closes the Writer by flushing any unwritten data to the underlying io.Writer and writing the GZIP footer. It does not close the underlying io.Writer.
 
-#### (*Writer) Flush
+#### (\*Writer) Flush
 
 ```go
 func (z *Writer) Flush() error
@@ -167,7 +167,7 @@ It is useful mainly in compressed network protocols, to ensure that a remote rea
 
 In the terminology of the zlib library, Flush is equivalent to Z_SYNC_FLUSH.
 
-#### (*Writer) Reset
+#### (\*Writer) Reset
 
 ```go
 func (z *Writer) Reset(w io.Writer)
@@ -175,7 +175,7 @@ func (z *Writer) Reset(w io.Writer)
 
 Reset discards the Writer z's state and makes it equivalent to the result of its original state from NewWriter or NewWriterLevel, but writing to w instead. This permits reusing a Writer rather than allocating a new one.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (z *Writer) Write(p []byte) (int, error)

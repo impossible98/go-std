@@ -8,6 +8,8 @@ pre-commit:
   commands:
     eslint:
       run: yarn run build
+    format:
+      run: yarn run format
 
 commit-msg:
   parallel: true

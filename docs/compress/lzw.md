@@ -22,7 +22,7 @@ func NewReader(r io.Reader, order Order, litWidth int) io.ReadCloser
 
 NewReader creates a new io.ReadCloser. Reads from the returned io.ReadCloser read and decompress data from r. If r does not also implement io.ByteReader, the decompressor may read more data than necessary from r. It is the caller's responsibility to call Close on the ReadCloser when finished reading. The number of bits to use for literal codes, litWidth, must be in the range [2,8] and is typically 8. It must equal the litWidth used during compression.
 
-It is guaranteed that the underlying type of the returned io.ReadCloser is a *Reader.
+It is guaranteed that the underlying type of the returned io.ReadCloser is a \*Reader.
 
 ### NewWriter
 
@@ -32,7 +32,8 @@ func NewWriter(w io.Writer, order Order, litWidth int) io.WriteCloser
 
 NewWriter creates a new io.WriteCloser. Writes to the returned io.WriteCloser are compressed and written to w. It is the caller's responsibility to call Close on the WriteCloser when finished writing. The number of bits to use for literal codes, litWidth, must be in the range [2,8] and is typically 8. Input bytes must be less than 1\<\<litWidth.
 
-It is guaranteed that the underlying type of the returned io.WriteCloser is a *Writer.
+It is guaranteed that the underlying type of the returned io.WriteCloser is a \*Writer.
+
 ## Types
 
 ### Order
@@ -63,7 +64,7 @@ type Reader struct {
 
 Reader is an io.Reader which can be used to read compressed data in the LZW format.
 
-#### (*Reader) Close
+#### (\*Reader) Close
 
 ```go
 func (r *Reader) Close() error
@@ -71,7 +72,7 @@ func (r *Reader) Close() error
 
 Close closes the Reader and returns an error for any future read operation. It does not close the underlying io.Reader.
 
-#### (*Reader) Read
+#### (\*Reader) Read
 
 ```go
 func (r *Reader) Read(b []byte) (int, error)
@@ -79,7 +80,7 @@ func (r *Reader) Read(b []byte) (int, error)
 
 Read implements io.Reader, reading uncompressed bytes from its underlying Reader.
 
-#### (*Reader) Reset
+#### (\*Reader) Reset
 
 ```go
 func (r *Reader) Reset(src io.Reader, order Order, litWidth int)
@@ -97,7 +98,7 @@ type Writer struct {
 
 Writer is an LZW compressor. It writes the compressed form of the data to an underlying writer (see NewWriter).
 
-#### (*Writer) Close
+#### (\*Writer) Close
 
 ```go
 func (w *Writer) Close() error
@@ -105,7 +106,7 @@ func (w *Writer) Close() error
 
 Close closes the Writer, flushing any pending output. It does not close w's underlying writer.
 
-#### (*Writer) Reset
+#### (\*Writer) Reset
 
 ```go
 func (w *Writer) Reset(dst io.Writer, order Order, litWidth int)
@@ -113,7 +114,7 @@ func (w *Writer) Reset(dst io.Writer, order Order, litWidth int)
 
 Reset clears the Writer's state and allows it to be reused again as a new Writer.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (w *Writer) Write(p []byte) (n int, err error)

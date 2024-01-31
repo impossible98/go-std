@@ -1,5 +1,3 @@
-
-
 # bzip2.go
 
 ```go showLineNumbers

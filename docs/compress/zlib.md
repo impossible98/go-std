@@ -128,7 +128,7 @@ NewWriterLevelDict is like NewWriterLevel but specifies a dictionary to compress
 
 The dictionary may be nil. If not, its contents should not be modified until the Writer is closed.
 
-#### (*Writer) Close
+#### (\*Writer) Close
 
 ```go
 func (z *Writer) Close() error
@@ -136,7 +136,7 @@ func (z *Writer) Close() error
 
 Close closes the Writer, flushing any unwritten data to the underlying io.Writer, but does not close the underlying io.Writer.
 
-#### (*Writer) Flush
+#### (\*Writer) Flush
 
 ```go
 func (z *Writer) Flush() error
@@ -144,7 +144,7 @@ func (z *Writer) Flush() error
 
 Flush flushes the Writer to its underlying io.Writer.
 
-#### (*Writer) Reset
+#### (\*Writer) Reset
 
 ```go
 func (z *Writer) Reset(w io.Writer)
@@ -152,7 +152,7 @@ func (z *Writer) Reset(w io.Writer)
 
 Reset clears the state of the Writer z such that it is equivalent to its initial state from NewWriterLevel or NewWriterLevelDict, but instead writing to w.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (z *Writer) Write(p []byte) (n int, err error)

@@ -27,10 +27,7 @@ const sidebars = {
       type: 'category',
       label: 'archive',
       collapsible: false,
-      items: [
-        'archive/tar',
-        'archive/zip',
-      ],
+      items: ['archive/tar', 'archive/zip'],
     },
     'bufio',
     'builtin',
@@ -51,11 +48,9 @@ const sidebars = {
       type: 'category',
       label: 'container',
       collapsible: false,
-      items: [
-        'container/heap',
-      ],
+      items: ['container/heap', 'container/list'],
     },
-     'unsafe'
+    'unsafe',
   ],
   codeSidebar: [
     {
@@ -94,28 +89,19 @@ const sidebars = {
       type: 'category',
       label: 'bufio',
       collapsible: false,
-      items: [
-        'code/bufio/bufio',
-        'code/bufio/scan',
-      ],
+      items: ['code/bufio/bufio', 'code/bufio/scan'],
     },
     {
       type: 'category',
       label: 'builtin',
       collapsible: false,
-      items: [
-        'code/builtin/builtin',
-      ],
+      items: ['code/builtin/builtin'],
     },
     {
       type: 'category',
       label: 'bytes',
       collapsible: false,
-      items: [
-        'code/bytes/buffer',
-        'code/bytes/bytes',
-        'code/bytes/reader',
-      ],
+      items: ['code/bytes/buffer', 'code/bytes/bytes', 'code/bytes/reader'],
     },
     {
       type: 'category',
@@ -151,28 +137,19 @@ const sidebars = {
           type: 'category',
           label: 'gzip',
           collapsible: false,
-          items: [
-            'code/compress/gzip/gunzip',
-            'code/compress/gzip/gzip',
-          ],
+          items: ['code/compress/gzip/gunzip', 'code/compress/gzip/gzip'],
         },
         {
           type: 'category',
           label: 'lzw',
           collapsible: false,
-          items: [
-            'code/compress/lzw/reader',
-            'code/compress/lzw/writer',
-          ],
+          items: ['code/compress/lzw/reader', 'code/compress/lzw/writer'],
         },
         {
           type: 'category',
           label: 'zlib',
           collapsible: false,
-          items: [
-            'code/compress/zlib/reader',
-            'code/compress/zlib/writer',
-          ],
+          items: ['code/compress/zlib/reader', 'code/compress/zlib/writer'],
         },
       ],
     },
@@ -185,9 +162,13 @@ const sidebars = {
           type: 'category',
           label: 'heap',
           collapsible: false,
-          items: [
-            'code/container/heap/heap',
-          ],
+          items: ['code/container/heap/heap'],
+        },
+        {
+          type: 'category',
+          label: 'list',
+          collapsible: false,
+          items: ['code/container/list/list'],
         },
       ],
     },
@@ -195,9 +176,7 @@ const sidebars = {
       type: 'category',
       label: 'unsafe',
       collapsible: false,
-      items: [
-        'code/unsafe/unsafe',
-      ],
+      items: ['code/unsafe/unsafe'],
     },
   ],
 };

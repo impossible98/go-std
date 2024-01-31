@@ -133,7 +133,7 @@ func NewWriterDict(w io.Writer, level int, dict []byte) (*Writer, error)
 
 NewWriterDict is like NewWriter but initializes the new Writer with a preset dictionary. The returned Writer behaves as if the dictionary had been written to it without producing any compressed output. The compressed data written to w can only be decompressed by a Reader initialized with the same dictionary.
 
-#### (*Writer) Close
+#### (\*Writer) Close
 
 ```go
 func (w *Writer) Close() error
@@ -141,7 +141,7 @@ func (w *Writer) Close() error
 
 Close flushes and closes the writer.
 
-#### func (*Writer) Flush
+#### func (\*Writer) Flush
 
 ```go
 func (w *Writer) Flush() error
@@ -151,7 +151,7 @@ Flush flushes any pending data to the underlying writer. It is useful mainly in 
 
 In the terminology of the zlib library, Flush is equivalent to Z_SYNC_FLUSH.
 
-#### (*Writer) Reset
+#### (\*Writer) Reset
 
 ```go
 func (w *Writer) Reset(dst io.Writer)
@@ -159,7 +159,7 @@ func (w *Writer) Reset(dst io.Writer)
 
 Reset discards the writer's state and makes it equivalent to the result of NewWriter or NewWriterDict called with dst and w's level and dictionary.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (w *Writer) Write(data []byte) (n int, err error)

@@ -84,7 +84,7 @@ type File struct {
 
 A File is a single file in a ZIP archive. The file information is in the embedded FileHeader. The file content can be accessed by calling Open.
 
-#### (*File) DataOffset
+#### (\*File) DataOffset
 
 ```go
 func (f *File) DataOffset() (offset int64, err error)
@@ -94,7 +94,7 @@ DataOffset returns the offset of the file's possibly-compressed data, relative t
 
 Most callers should instead use Open, which transparently decompresses data and verifies checksums.
 
-#### (*File) Open
+#### (\*File) Open
 
 ```go
 func (f *File) Open() (io.ReadCloser, error)
@@ -102,7 +102,7 @@ func (f *File) Open() (io.ReadCloser, error)
 
 Open returns a ReadCloser that provides access to the File's contents. Multiple files may be read concurrently.
 
-#### (*File) OpenRaw
+#### (\*File) OpenRaw
 
 ```go
 func (f *File) OpenRaw() (io.Reader, error)
@@ -182,7 +182,7 @@ func FileInfoHeader(fi fs.FileInfo) (*FileHeader, error)
 
 FileInfoHeader creates a partially-populated FileHeader from an fs.FileInfo. Because fs.FileInfo's Name method returns only the base name of the file it describes, it may be necessary to modify the Name field of the returned header to provide the full path name of the file. If compression is desired, callers should set the FileHeader.Method field; it is unset by default.
 
-#### (*FileHeader) FileInfo
+#### (\*FileHeader) FileInfo
 
 ```go
 func (h *FileHeader) FileInfo() fs.FileInfo
@@ -190,7 +190,7 @@ func (h *FileHeader) FileInfo() fs.FileInfo
 
 FileInfo returns an fs.FileInfo for the FileHeader.
 
-#### (*FileHeader) Mode
+#### (\*FileHeader) Mode
 
 ```go
 func (h *FileHeader) Mode() (mode fs.FileMode)
@@ -198,7 +198,7 @@ func (h *FileHeader) Mode() (mode fs.FileMode)
 
 Mode returns the permission and mode bits for the FileHeader.
 
-#### (*FileHeader) SetMode
+#### (\*FileHeader) SetMode
 
 ```go
 func (h *FileHeader) SetMode(mode fs.FileMode)
@@ -225,7 +225,7 @@ func OpenReader(name string) (*ReadCloser, error)
 
 OpenReader will open the Zip file specified by name and return a ReadCloser.
 
-#### (*ReadCloser) Close
+#### (\*ReadCloser) Close
 
 ```go
 func (rc *ReadCloser) Close() error
@@ -253,7 +253,7 @@ func NewReader(r io.ReaderAt, size int64) (*Reader, error)
 
 NewReader returns a new Reader reading from r, which is assumed to have the given size in bytes.
 
-#### (*Reader) Open
+#### (\*Reader) Open
 
 ```go
 func (r *Reader) Open(name string) (fs.File, error)
@@ -261,7 +261,7 @@ func (r *Reader) Open(name string) (fs.File, error)
 
 Open opens the named file in the ZIP archive, using the semantics of fs.FS.Open: paths are always slash separated, with no leading / or ../ elements.
 
-#### (*Reader) RegisterDecompressor
+#### (\*Reader) RegisterDecompressor
 
 ```go
 func (z *Reader) RegisterDecompressor(method uint16, dcomp Decompressor)
@@ -287,7 +287,7 @@ func NewWriter(w io.Writer) *Writer
 
 NewWriter returns a new Writer writing a zip file to w.
 
-#### (*Writer) Close
+#### (\*Writer) Close
 
 ```go
 func (w *Writer) Close() error
@@ -295,7 +295,7 @@ func (w *Writer) Close() error
 
 Close finishes writing the zip file by writing the central directory. It does not close the underlying writer.
 
-#### (*Writer) Copy
+#### (\*Writer) Copy
 
 ```go
 func (w *Writer) Copy(f *File) error
@@ -303,7 +303,7 @@ func (w *Writer) Copy(f *File) error
 
 Copy copies the file f (obtained from a Reader) into w. It copies the raw form directly bypassing decompression, compression, and validation.
 
-#### (*Writer) Create
+#### (\*Writer) Create
 
 ```go
 func (w *Writer) Create(name string) (io.Writer, error)
@@ -311,7 +311,7 @@ func (w *Writer) Create(name string) (io.Writer, error)
 
 Create adds a file to the zip file using the provided name. It returns a Writer to which the file contents should be written. The file contents will be compressed using the Deflate method. The name must be a relative path: it must not start with a drive letter (e.g. C:) or leading slash, and only forward slashes are allowed. To create a directory instead of a file, add a trailing slash to the name. The file's contents must be written to the io.Writer before the next call to Create, CreateHeader, or Close.
 
-#### (*Writer) CreateHeader
+#### (\*Writer) CreateHeader
 
 ```go
 func (w *Writer) CreateHeader(fh *FileHeader) (io.Writer, error)
@@ -321,7 +321,7 @@ CreateHeader adds a file to the zip archive using the provided FileHeader for th
 
 This returns a Writer to which the file contents should be written. The file's contents must be written to the io.Writer before the next call to Create, CreateHeader, CreateRaw, or Close.
 
-#### (*Writer) CreateRaw
+#### (\*Writer) CreateRaw
 
 ```go
 func (w *Writer) CreateRaw(fh *FileHeader) (io.Writer, error)
@@ -331,7 +331,7 @@ CreateRaw adds a file to the zip archive using the provided FileHeader and retur
 
 In contrast to CreateHeader, the bytes passed to Writer are not compressed.
 
-#### (*Writer) Flush
+#### (\*Writer) Flush
 
 ```go
 func (w *Writer) Flush() error
@@ -339,7 +339,7 @@ func (w *Writer) Flush() error
 
 Flush flushes any buffered data to the underlying writer. Calling Flush is not normally necessary; calling Close is sufficient.
 
-#### func (*Writer) RegisterCompressor
+#### func (\*Writer) RegisterCompressor
 
 ```go
 func (w *Writer) RegisterCompressor(method uint16, comp Compressor)
@@ -347,7 +347,7 @@ func (w *Writer) RegisterCompressor(method uint16, comp Compressor)
 
 RegisterCompressor registers or overrides a custom compressor for a specific method ID. If a compressor for a given method is not found, Writer will default to looking up the compressor at the package level.
 
-#### func (*Writer) SetComment
+#### func (\*Writer) SetComment
 
 ```go
 func (w *Writer) SetComment(comment string) error
@@ -355,7 +355,7 @@ func (w *Writer) SetComment(comment string) error
 
 SetComment sets the end-of-central-directory comment field. It can only be called before Close.
 
-#### func (*Writer) SetOffset
+#### func (\*Writer) SetOffset
 
 ```go
 func (w *Writer) SetOffset(n int64)

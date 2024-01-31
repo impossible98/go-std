@@ -243,7 +243,7 @@ FileInfoHeader creates a partially-populated Header from fi. If fi describes a s
 
 Since fs.FileInfo's Name method only returns the base name of the file it describes, it may be necessary to modify Header.Name to provide the full path name of the file.
 
-#### (*Header) FileInfo
+#### (\*Header) FileInfo
 
 ```go
 func (h *Header) FileInfo() fs.FileInfo
@@ -269,7 +269,7 @@ func NewReader(r io.Reader) *Reader
 
 NewReader creates a new Reader reading from r.
 
-#### (*Reader) Next
+#### (\*Reader) Next
 
 ```go
 func (tr *Reader) Next() (*Header, error)
@@ -279,7 +279,7 @@ Next advances to the next entry in the tar archive. The Header.Size determines h
 
 io.EOF is returned at the end of the input.
 
-#### (*Reader) Read
+#### (\*Reader) Read
 
 ```go
 func (tr *Reader) Read(b []byte) (int, error)
@@ -309,7 +309,7 @@ func NewWriter(w io.Writer) *Writer
 
 NewWriter creates a new Writer writing to w.
 
-#### func (*Writer) Close
+#### func (\*Writer) Close
 
 ```go
 func (tw *Writer) Close() error
@@ -317,7 +317,7 @@ func (tw *Writer) Close() error
 
 Close closes the tar archive by flushing the padding, and writing the footer. If the current file (from a prior call to WriteHeader) is not fully written, then this returns an error.
 
-#### (*Writer) Flush
+#### (\*Writer) Flush
 
 ```go
 func (tw *Writer) Flush() error
@@ -327,7 +327,7 @@ Flush finishes writing the current file's block padding. The current file must b
 
 This is unnecessary as the next call to WriteHeader or Close will implicitly flush out the file's padding.
 
-#### (*Writer) Write
+#### (\*Writer) Write
 
 ```go
 func (tw *Writer) Write(b []byte) (int, error)
@@ -337,7 +337,7 @@ Write writes to the current file in the tar archive. Write returns the error Err
 
 Calling Write on special types like TypeLink, TypeSymlink, TypeChar, TypeBlock, TypeDir, and TypeFifo returns (0, ErrWriteTooLong) regardless of what the Header.Size claims.
 
-#### (*Writer) WriteHeader
+#### (\*Writer) WriteHeader
 
 ```go
 func (tw *Writer) WriteHeader(hdr *Header) error
