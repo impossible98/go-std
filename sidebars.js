@@ -44,6 +44,7 @@ const sidebars = {
         'compress/zlib',
       ],
     },
+     'unsafe'
   ],
   codeSidebar: [
     {
@@ -135,6 +136,14 @@ const sidebars = {
             'code/compress/zlib/writer',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'unsafe',
+      collapsible: false,
+      items: [
+        'code/unsafe/unsafe',
       ],
     },
   ],
