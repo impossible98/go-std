@@ -51,7 +51,16 @@ const sidebars = {
       items: ['container/heap', 'container/list', 'container/ring'],
     },
     'context',
-    'crypto/index',
+    {
+      type: 'category',
+      label: 'crypto',
+      link: {
+        type: 'doc',
+        id: 'crypto/index',
+      },
+      collapsible: false,
+      items: ['crypto/aes'],
+    },
     'unsafe',
   ],
   codeSidebar: [
@@ -190,7 +199,22 @@ const sidebars = {
       type: 'category',
       label: 'crypto',
       collapsible: false,
-      items: ['code/crypto/crypto'],
+      items: [
+        'code/crypto/crypto',
+        {
+          type: 'category',
+          label: 'aes',
+          collapsible: false,
+          items: [
+            'code/crypto/aes/aes_gcm',
+            'code/crypto/aes/block',
+            'code/crypto/aes/cipher_asm',
+            'code/crypto/aes/cipher',
+            'code/crypto/aes/const',
+            'code/crypto/aes/modes',
+          ],
+        },
+      ],
     },
     {
       type: 'category',
