@@ -41,6 +41,7 @@ const sidebars = {
         'compress/flate',
         'compress/gzip',
         'compress/lzw',
+        'compress/zlib',
       ],
     },
   ],
@@ -123,6 +124,15 @@ const sidebars = {
           items: [
             'code/compress/lzw/reader',
             'code/compress/lzw/writer',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'zlib',
+          collapsible: false,
+          items: [
+            'code/compress/zlib/reader',
+            'code/compress/zlib/writer',
           ],
         },
       ],
