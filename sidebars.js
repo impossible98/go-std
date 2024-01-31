@@ -23,6 +23,7 @@ const sidebars = {
       id: 'intro',
       label: 'Intro',
     },
+    'bufio',
     {
       type: 'category',
       label: 'archive',
@@ -77,6 +78,15 @@ const sidebars = {
             'code/archive/zip/writer',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'bufio',
+      collapsible: false,
+      items: [
+        'code/bufio/bufio',
+        'code/bufio/scan',
       ],
     },
     {
