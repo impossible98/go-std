@@ -61,6 +61,7 @@ const sidebars = {
       collapsible: false,
       items: ['crypto/aes', 'crypto/cipher'],
     },
+    'unicode/index',
     'unsafe',
   ],
   codeSidebar: [
@@ -229,6 +230,18 @@ const sidebars = {
             'code/crypto/cipher/xor_amd64',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'unicode/',
+      collapsible: false,
+      items: [
+        'code/unicode/casetables',
+        'code/unicode/digit',
+        'code/unicode/graphic',
+        'code/unicode/letter',
+        'code/unicode/tables',
       ],
     },
     {
