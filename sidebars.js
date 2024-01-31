@@ -23,9 +23,6 @@ const sidebars = {
       id: 'intro',
       label: 'Intro',
     },
-    'bufio',
-    'builtin',
-    'bytes',
     {
       type: 'category',
       label: 'archive',
@@ -35,6 +32,9 @@ const sidebars = {
         'archive/zip',
       ],
     },
+    'bufio',
+    'builtin',
+    'bytes',
     {
       type: 'category',
       label: 'compress',
@@ -45,6 +45,14 @@ const sidebars = {
         'compress/gzip',
         'compress/lzw',
         'compress/zlib',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'container',
+      collapsible: false,
+      items: [
+        'container/heap',
       ],
     },
      'unsafe'
@@ -164,6 +172,21 @@ const sidebars = {
           items: [
             'code/compress/zlib/reader',
             'code/compress/zlib/writer',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'container',
+      collapsible: false,
+      items: [
+        {
+          type: 'category',
+          label: 'heap',
+          collapsible: false,
+          items: [
+            'code/container/heap/heap',
           ],
         },
       ],
