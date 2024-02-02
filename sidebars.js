@@ -77,7 +77,7 @@ const sidebars = {
         type: 'doc',
         id: 'os/index',
       },
-      items: ['os/exec'],
+      items: ['os/exec', 'os/signal'],
     },
     'unicode/index',
     'unsafe',
@@ -358,11 +358,20 @@ const sidebars = {
         'code/os/wait_waitid',
         {
           type: 'category',
-          label: 'aes',
+          label: 'exec',
           items: [
             'code/os/exec/exec',
             'code/os/exec/exec_unix',
             'code/os/exec/lp_unix',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'signal',
+          items: [
+            'code/os/signal/doc',
+            'code/os/signal/signal',
+            'code/os/signal/signal_unix',
           ],
         },
       ],
