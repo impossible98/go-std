@@ -1684,7 +1684,6 @@ func main() {
 - [error.go](/code/os/error)
 - [error_errno.go](/code/os/error_errno)
 - [error_posix.go](/code/os/error_posix)
-
 - [exec.go](/code/os/exec)
 - [exec_posix.go](/code/os/exec_posix)
 - [exec_unix.go](/code/os/exec_unix)
@@ -1693,7 +1692,6 @@ func main() {
 - [file.go](/code/os/file)
 - [file_posix.go](/code/os/file_posix)
 - [file_unix.go](/code/os/file_unix)
-
 - [getwd.go](/code/os/getwd)
 - [path.go](/code/os/path)
 - [path_unix.go](/code/os/path_unix)
@@ -1702,7 +1700,6 @@ func main() {
 - [rawconn.go](/code/os/rawconn)
 - [readfrom_linux.go](/code/os/readfrom_linux)
 - [removeall_at.go](/code/os/removeall_at)
-
 - [rlimit.go](/code/os/rlimit)
 - [rlimit_stub.go](/code/os/rlimit_stub)
 - [stat.go](/code/os/stat)
@@ -1712,7 +1709,6 @@ func main() {
 - [str.go](/code/os/str)
 - [sys.go](/code/os/sys)
 - [sys_linux.go](/code/os/sys_linux)
-
 - [sys_unix.go](/code/os/sys_unix)
 - [tempfile.go](/code/os/tempfile)
 - [types.go](/code/os/types)

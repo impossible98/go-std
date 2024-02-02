@@ -26,7 +26,6 @@ const sidebars = {
     {
       type: 'category',
       label: 'archive',
-      collapsible: false,
       items: ['archive/tar', 'archive/zip'],
     },
     'bufio',
@@ -35,7 +34,6 @@ const sidebars = {
     {
       type: 'category',
       label: 'compress',
-      collapsible: false,
       items: [
         'compress/bzip2',
         'compress/flate',
@@ -47,7 +45,6 @@ const sidebars = {
     {
       type: 'category',
       label: 'container',
-      collapsible: false,
       items: ['container/heap', 'container/list', 'container/ring'],
     },
     'context',
@@ -58,7 +55,6 @@ const sidebars = {
         type: 'doc',
         id: 'crypto/index',
       },
-      collapsible: false,
       items: [
         'crypto/aes',
         'crypto/cipher',
@@ -74,11 +70,24 @@ const sidebars = {
         'crypto/rsa',
       ],
     },
-    'os/index',
+    {
+      type: 'category',
+      label: 'os',
+      link: {
+        type: 'doc',
+        id: 'os/index',
+      },
+      items: ['os/exec'],
+    },
     'unicode/index',
     'unsafe',
   ],
   codeSidebar: [
+    {
+      type: 'doc',
+      id: 'code/index',
+      label: 'Intro',
+    },
     {
       type: 'category',
       label: 'archive',
@@ -87,7 +96,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'tar',
-          collapsible: false,
           items: [
             'code/archive/tar/common',
             'code/archive/tar/format',
@@ -101,7 +109,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'zip',
-          collapsible: false,
           items: [
             'code/archive/zip/reader',
             'code/archive/zip/register',
@@ -114,19 +121,16 @@ const sidebars = {
     {
       type: 'category',
       label: 'bufio',
-      collapsible: false,
       items: ['code/bufio/bufio', 'code/bufio/scan'],
     },
     {
       type: 'category',
       label: 'builtin',
-      collapsible: false,
       items: ['code/builtin/builtin'],
     },
     {
       type: 'category',
       label: 'bytes',
-      collapsible: false,
       items: ['code/bytes/buffer', 'code/bytes/bytes', 'code/bytes/reader'],
     },
     {
@@ -137,7 +141,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'bzip2',
-          collapsible: false,
           items: [
             'code/compress/bzip2/bit_reader',
             'code/compress/bzip2/bzip2',
@@ -148,7 +151,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'flate',
-          collapsible: false,
           items: [
             'code/compress/flate/deflate',
             'code/compress/flate/deflatefast',
@@ -162,19 +164,16 @@ const sidebars = {
         {
           type: 'category',
           label: 'gzip',
-          collapsible: false,
           items: ['code/compress/gzip/gunzip', 'code/compress/gzip/gzip'],
         },
         {
           type: 'category',
           label: 'lzw',
-          collapsible: false,
           items: ['code/compress/lzw/reader', 'code/compress/lzw/writer'],
         },
         {
           type: 'category',
           label: 'zlib',
-          collapsible: false,
           items: ['code/compress/zlib/reader', 'code/compress/zlib/writer'],
         },
       ],
@@ -187,19 +186,16 @@ const sidebars = {
         {
           type: 'category',
           label: 'heap',
-          collapsible: false,
           items: ['code/container/heap/heap'],
         },
         {
           type: 'category',
           label: 'list',
-          collapsible: false,
           items: ['code/container/list/list'],
         },
         {
           type: 'category',
           label: 'ring',
-          collapsible: false,
           items: ['code/container/ring/ring'],
         },
       ],
@@ -207,19 +203,16 @@ const sidebars = {
     {
       type: 'category',
       label: 'context',
-      collapsible: false,
       items: ['code/context/context'],
     },
     {
       type: 'category',
       label: 'crypto',
-      collapsible: false,
       items: [
         'code/crypto/crypto',
         {
           type: 'category',
           label: 'aes',
-          collapsible: false,
           items: [
             'code/crypto/aes/aes_gcm',
             'code/crypto/aes/block',
@@ -232,7 +225,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'cipher',
-          collapsible: false,
           items: [
             'code/crypto/cipher/cbc',
             'code/crypto/cipher/cfb',
@@ -247,7 +239,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'des',
-          collapsible: false,
           items: [
             'code/crypto/des/block',
             'code/crypto/des/cipher',
@@ -257,13 +248,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'dsa',
-          collapsible: false,
           items: ['code/crypto/dsa/dsa'],
         },
         {
           type: 'category',
           label: 'ecdsa',
-          collapsible: false,
           items: [
             'code/crypto/ecdsa/ecdsa',
             'code/crypto/ecdsa/ecdsa_noasm',
@@ -273,13 +262,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'ed25519',
-          collapsible: false,
           items: ['code/crypto/ed25519/ed25519'],
         },
         {
           type: 'category',
           label: 'elliptic',
-          collapsible: false,
           items: [
             'code/crypto/elliptic/elliptic',
             'code/crypto/elliptic/nistec',
@@ -290,13 +277,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'hmac',
-          collapsible: false,
           items: ['code/crypto/hmac/hmac'],
         },
         {
           type: 'category',
           label: 'md5',
-          collapsible: false,
           items: [
             'code/crypto/md5/md5',
             'code/crypto/md5/md5block',
@@ -306,7 +291,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'rand',
-          collapsible: false,
           items: [
             'code/crypto/rand/rand',
             'code/crypto/rand/rand_getrandom',
@@ -317,13 +301,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'rc4',
-          collapsible: false,
           items: ['code/crypto/rc4/rc4'],
         },
         {
           type: 'category',
           label: 'rsa',
-          collapsible: false,
           items: [
             'code/crypto/rsa/notboring',
             'code/crypto/rsa/pkcs1v15',
@@ -336,7 +318,6 @@ const sidebars = {
     {
       type: 'category',
       label: 'os',
-      collapsible: false,
       items: [
         'code/os/dir',
         'code/os/dir_unix',
@@ -375,12 +356,20 @@ const sidebars = {
         'code/os/types',
         'code/os/types_unix',
         'code/os/wait_waitid',
+        {
+          type: 'category',
+          label: 'aes',
+          items: [
+            'code/os/exec/exec',
+            'code/os/exec/exec_unix',
+            'code/os/exec/lp_unix',
+          ],
+        },
       ],
     },
     {
       type: 'category',
       label: 'unicode',
-      collapsible: false,
       items: [
         'code/unicode/casetables',
         'code/unicode/digit',
@@ -392,7 +381,6 @@ const sidebars = {
     {
       type: 'category',
       label: 'unsafe',
-      collapsible: false,
       items: ['code/unsafe/unsafe'],
     },
   ],
