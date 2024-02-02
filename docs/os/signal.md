@@ -6,7 +6,7 @@ import "os/signal"
 
 ## Overview
 
-This package signal implements access to incoming signals.
+This package implements access to incoming signals.
 
 Signals are primarily used on Unix-like systems. For the use of this package on Windows and Plan 9, see below.
 
