@@ -87,6 +87,11 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'debug',
+      items: ['debug/buildinfo'],
+    },
+    {
+      type: 'category',
       label: 'os',
       link: {
         type: 'doc',
@@ -369,6 +374,18 @@ const sidebars = {
               ],
             },
           ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'debug',
+      collapsible: false,
+      items: [
+        {
+          type: 'category',
+          label: 'buildinfo',
+          items: ['code/debug/buildinfo/buildinfo'],
         },
       ],
     },
