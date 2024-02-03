@@ -79,7 +79,15 @@ const sidebars = {
       },
       items: ['os/exec', 'os/signal', 'os/user'],
     },
-    'syscall/index',
+    {
+      type: 'category',
+      label: 'syscall',
+      link: {
+        type: 'doc',
+        id: 'syscall/index',
+      },
+      items: ['syscall/js'],
+    },
     'unicode/index',
     'unsafe',
   ],
@@ -419,6 +427,11 @@ const sidebars = {
         'code/syscall/zsyscall_linux_amd64',
         'code/syscall/zsysnum_linux_amd64',
         'code/syscall/ztypes_linux_amd64',
+        {
+          type: 'category',
+          label: 'js',
+          items: ['code/syscall/js/func', 'code/syscall/js/js'],
+        },
       ],
     },
     {

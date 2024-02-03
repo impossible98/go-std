@@ -2227,16 +2227,15 @@ func Fstatfs(fd int, buf *Statfs_t) (err error)
 
 ### Fsync
 
-````go
 ```go
 func Fsync(fd int) (err error)
-````
+```
 
-````
 ### Ftruncate
+
 ```go
 func Ftruncate(fd int, length int64) (err error)
-````
+```
 
 ### Futimes
 
