@@ -72,6 +72,11 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'database',
+      items: ['database/sql'],
+    },
+    {
+      type: 'category',
       label: 'os',
       link: {
         type: 'doc',
@@ -329,6 +334,22 @@ const sidebars = {
             'code/crypto/rsa/pkcs1v15',
             'code/crypto/rsa/pss',
             'code/crypto/rsa/rsa',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'database',
+      collapsible: false,
+      items: [
+        {
+          type: 'category',
+          label: 'sql',
+          items: [
+            'code/database/sql/convert',
+            'code/database/sql/ctxutil',
+            'code/database/sql/sql',
           ],
         },
       ],
