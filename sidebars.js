@@ -73,7 +73,17 @@ const sidebars = {
     {
       type: 'category',
       label: 'database',
-      items: ['database/sql'],
+      items: [
+        {
+          type: 'category',
+          label: 'sql',
+          link: {
+            type: 'doc',
+            id: 'database/sql',
+          },
+          items: ['database/sql/driver'],
+        },
+      ],
     },
     {
       type: 'category',
@@ -350,6 +360,14 @@ const sidebars = {
             'code/database/sql/convert',
             'code/database/sql/ctxutil',
             'code/database/sql/sql',
+            {
+              type: 'category',
+              label: 'driver',
+              items: [
+                'code/database/sql/driver/driver',
+                'code/database/sql/driver/types',
+              ],
+            },
           ],
         },
       ],
