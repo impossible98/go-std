@@ -8,4 +8,8 @@ fix:
 	yarn run format:fix
 install:
 	yarn install --frozen-locakfile
+search:
+	bash ./scripts/crawler.sh
+deploy:
+	netlify deploy --prod
 .PHONY: build
