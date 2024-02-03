@@ -79,7 +79,15 @@ const sidebars = {
       },
       items: ['os/exec', 'os/signal', 'os/user'],
     },
-    'runtime/index',
+    {
+      type: 'category',
+      label: 'runtime',
+      link: {
+        type: 'doc',
+        id: 'runtime/index',
+      },
+      items: ['runtime/cgo'],
+    },
     {
       type: 'category',
       label: 'syscall',
@@ -531,6 +539,21 @@ const sidebars = {
         'code/runtime/vdso_linux',
         'code/runtime/vdso_linux_amd64',
         'code/runtime/write_err',
+        {
+          type: 'category',
+          label: 'cgo',
+          items: [
+            'code/runtime/cgo/callbacks',
+            'code/runtime/cgo/callbacks_traceback',
+            'code/runtime/cgo/cgo',
+            'code/runtime/cgo/handle',
+            'code/runtime/cgo/iscgo',
+            'code/runtime/cgo/linux',
+            'code/runtime/cgo/mmap',
+            'code/runtime/cgo/setenv',
+            'code/runtime/cgo/sigaction',
+          ],
+        },
       ],
     },
     {
