@@ -89,6 +89,15 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'GWJZCQDOCG',
+
+        // Public API key: it is safe to commit it
+        apiKey: '40fea26e7baa1efae18c2544adcf1597',
+
+        indexName: 'gostd-impossible98',
+      },
     }),
 };
 
