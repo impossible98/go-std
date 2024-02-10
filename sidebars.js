@@ -117,7 +117,15 @@ const sidebars = {
       },
       items: ['syscall/js'],
     },
-    'unicode/index',
+    {
+      type: 'category',
+      label: 'unicode',
+      link: {
+        type: 'doc',
+        id: 'unicode/index',
+      },
+      items: ['unicode/utf16'],
+    },
     'unsafe',
   ],
   codeSidebar: [
@@ -659,6 +667,11 @@ const sidebars = {
         'code/unicode/graphic',
         'code/unicode/letter',
         'code/unicode/tables',
+        {
+          type: 'category',
+          label: 'utf16',
+          items: ['code/unicode/utf16/utf16'],
+        },
       ],
     },
     {
