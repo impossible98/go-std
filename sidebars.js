@@ -90,6 +90,7 @@ const sidebars = {
       label: 'debug',
       items: ['debug/buildinfo'],
     },
+    'embed',
     {
       type: 'category',
       label: 'os',
@@ -396,6 +397,11 @@ const sidebars = {
           items: ['code/debug/buildinfo/buildinfo'],
         },
       ],
+    },
+    {
+      type: 'category',
+      label: 'embed',
+      items: ['code/embed/embed'],
     },
     {
       type: 'category',
