@@ -104,6 +104,7 @@ const sidebars = {
       },
       items: ['os/exec', 'os/signal', 'os/user'],
     },
+    'plugin',
     {
       type: 'category',
       label: 'runtime',
@@ -432,6 +433,11 @@ const sidebars = {
         'code/fmt/print',
         'code/fmt/scan',
       ],
+    },
+    {
+      type: 'category',
+      label: 'plugin',
+      items: ['code/plugin/plugin', 'code/plugin/plugin_dlopen'],
     },
     {
       type: 'category',
