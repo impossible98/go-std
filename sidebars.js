@@ -116,6 +116,7 @@ const sidebars = {
     },
     'sort',
     'strconv',
+    'strings',
     {
       type: 'category',
       label: 'syscall',
@@ -694,6 +695,19 @@ const sidebars = {
         'code/strconv/isprint',
         'code/strconv/itoa',
         'code/strconv/quote',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'strings',
+      items: [
+        'code/strings/builder',
+        'code/strings/clone',
+        'code/strings/compare',
+        'code/strings/reader',
+        'code/strings/replace',
+        'code/strings/search',
+        'code/strings/strings',
       ],
     },
     {
