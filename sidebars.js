@@ -114,6 +114,7 @@ const sidebars = {
       },
       items: ['runtime/cgo'],
     },
+    'sort',
     {
       type: 'category',
       label: 'syscall',
@@ -660,6 +661,18 @@ const sidebars = {
             'code/runtime/cgo/sigaction',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'sort',
+      items: [
+        'code/sort/search',
+        'code/sort/slice',
+        'code/sort/slice_go113',
+        'code/sort/sort',
+        'code/sort/zsortfunc',
+        'code/sort/zsortinterface',
       ],
     },
     {
