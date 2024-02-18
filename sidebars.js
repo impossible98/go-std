@@ -94,6 +94,7 @@ const sidebars = {
     'errors',
     'expvar',
     'flag',
+    'fmt',
     {
       type: 'category',
       label: 'os',
@@ -420,6 +421,17 @@ const sidebars = {
       type: 'category',
       label: 'flag',
       items: ['code/flag/flag'],
+    },
+    {
+      type: 'category',
+      label: 'fmt',
+      items: [
+        'code/fmt/doc',
+        'code/fmt/errors',
+        'code/fmt/format',
+        'code/fmt/print',
+        'code/fmt/scan',
+      ],
     },
     {
       type: 'category',
