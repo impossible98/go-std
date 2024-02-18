@@ -93,6 +93,7 @@ const sidebars = {
     'embed',
     'errors',
     'expvar',
+    'flag',
     {
       type: 'category',
       label: 'os',
@@ -414,6 +415,11 @@ const sidebars = {
       type: 'category',
       label: 'expvar',
       items: ['code/expvar/expvar'],
+    },
+    {
+      type: 'category',
+      label: 'flag',
+      items: ['code/flag/flag'],
     },
     {
       type: 'category',
