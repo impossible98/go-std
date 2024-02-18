@@ -91,6 +91,7 @@ const sidebars = {
       items: ['debug/buildinfo'],
     },
     'embed',
+    'errors',
     {
       type: 'category',
       label: 'os',
@@ -402,6 +403,11 @@ const sidebars = {
       type: 'category',
       label: 'embed',
       items: ['code/embed/embed'],
+    },
+    {
+      type: 'category',
+      label: 'errors',
+      items: ['code/errors/errors', 'code/errors/wrap'],
     },
     {
       type: 'category',
