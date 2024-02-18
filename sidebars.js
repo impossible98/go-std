@@ -92,6 +92,7 @@ const sidebars = {
     },
     'embed',
     'errors',
+    'expvar',
     {
       type: 'category',
       label: 'os',
@@ -408,6 +409,11 @@ const sidebars = {
       type: 'category',
       label: 'errors',
       items: ['code/errors/errors', 'code/errors/wrap'],
+    },
+    {
+      type: 'category',
+      label: 'expvar',
+      items: ['code/expvar/expvar'],
     },
     {
       type: 'category',
